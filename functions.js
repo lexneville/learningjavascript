@@ -16,4 +16,8 @@ pressGrindBeans();
 
 //Activity
 
-const coffeeOrder = (size, drinkType) => {};
+const coffeeOrder = (size, drinkType) => {
+  console.log(`Coffee Order: ${size} ${drinkType}`);
+};
+
+coffeeOrder("medium", "cappucino");
