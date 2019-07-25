@@ -70,16 +70,116 @@ const addUp = (num1, num2) => {
 addUp(5, 3); // Add the two numbers inputted as parameters and rteturn the result
 console.log(addUp(2, 25)); //Add, return and the print the result.
 
-*/
-
-const multiplyByNineFifths = celsius => {
+const multiplyByNineFifths = (celsius) => {
   return celsius * (9 / 5);
 };
 
-const getFarenheit = celsius => {
+const getFarenheit = (celsius) => {
   return multiplyByNineFifths(celsius) + 32;
 };
 
 console.log("The temperature is " + getFarenheit(20) + "°F");
 
-//
+//original celsius value is provided as a function parameter within the console.log instruction
+
+
+//Function declarations and expressions
+
+//Declaration 1
+
+function square(number) {
+  //function name then (parameters)
+  return number * number;
+}
+
+console.log(square(5));
+
+
+//Declaration 2
+
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+console.log(factorial(5));
+
+
+//Expression
+
+const square = function(number) {
+  return number * number;
+};
+
+square(5);
+
+// in this example the function has not been given a name
+// and the has been stored within the variable anonymously
+
+
+//Arrow function syntax
+
+const square = (number) => {
+  return number * number;
+};
+
+square(5);
+
+// => is shorthand for creating a function
+
+
+//Activity - change code to arrow function syntax
+
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+console.log(factorial(5));
+
+//becomes
+
+const factorial = n => {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+};
+console.log(factorial(5));
+
+// Functions Activity 1
+
+let orderCount = 0;
+const takeOrder = (size, topping) => {
+  orderCount++;
+  console.log(
+    `Order number ${orderCount} is for a ${size} pizza with ${topping}`
+  );
+};
+takeOrder("12 inch", "pineapple");
+takeOrder("9 inch", "pepperoni");
+
+*/
+
+//functions Activity 2
+
+let accBalance = 500
+let pin = 1234
+
+const withdrawal = (pinNumber, withdrawalAmount) => {
+  if (accBalance >= withdrawalAmount && pinNumber === pin) {
+  console.log(`Thank you, please take your withdrawal of £${withdrawalAmount}.`)
+  }
+  else if (accBalance < withdrawalAmount && pinNumber === pin){
+    console.log("Sorry, you do not have the necessary funds to withdraw that amount.")
+  }
+  else if (accBalance >= withdrawalAmount && pinNumber !== pin){
+    console.log ("Sorry, wrong pin entered,please try again")
+  };
+withdrawal("1234", "400")
