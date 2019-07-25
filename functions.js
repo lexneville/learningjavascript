@@ -169,17 +169,20 @@ takeOrder("9 inch", "pepperoni");
 
 //functions Activity 2
 
-let accBalance = 500
-let pin = 1234
+let accBalance = 500;
+let pin = 1234;
 
 const withdrawal = (pinNumber, withdrawalAmount) => {
   if (accBalance >= withdrawalAmount && pinNumber === pin) {
-  console.log(`Thank you, please take your withdrawal of £${withdrawalAmount}.`)
+    console.log(
+      `Thank you, please take your withdrawal of £${withdrawalAmount}.`
+    );
+  } else if (accBalance < withdrawalAmount && pinNumber === pin) {
+    console.log(
+      "Sorry, you do not have the necessary funds to withdraw that amount."
+    );
+  } else if (accBalance >= withdrawalAmount && pinNumber !== pin) {
+    console.log("Sorry, wrong pin entered,please try again");
   }
-  else if (accBalance < withdrawalAmount && pinNumber === pin){
-    console.log("Sorry, you do not have the necessary funds to withdraw that amount.")
-  }
-  else if (accBalance >= withdrawalAmount && pinNumber !== pin){
-    console.log ("Sorry, wrong pin entered,please try again")
-  };
-withdrawal("1234", "400")
+};
+withdrawal(1234, 400);
